@@ -9,7 +9,6 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-
 h1 {
     margin-bottom: 20px;
     font-size: 2rem;
@@ -236,15 +235,6 @@ footer {
   z-index: 1100;
 }
 
-.twitch-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #1f1f23;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
 
 .twitch-btn {
   background: #9146FF;
@@ -260,4 +250,53 @@ footer {
 
 .twitch-btn:hover {
   background: #772ce8;
+}
+/* Texto central */
+
+/* Twitch players */
+.twitch-players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1; /* menor que o modal */
+}
+
+.twitch-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1f1f23;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.player-name {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* Modal */
+
+
+.streamers-text {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 200px; /* mais abaixo */
+    color: #fff; /* cor neutra */
+    text-shadow: 1px 1px 5px #000;
+}
+.twitch-logo {
+    width: 20px;       /* tamanho do logo */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 6px; /* espaço entre o logo e o texto */
+}
+.twitch-logoh2 {
+    width: 50px;       /* tamanho do logo */
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 6px; /* espaço entre o logo e o texto */
 }

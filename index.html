@@ -7,53 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Roleta de Sorteio</h1>
-        
-        <input type="file" id="fileInput" accept=".xlsx">
-        <input type="number" id="ticketValue" placeholder="Valor do Ticket">
-        
-        <label for="speedSelect">Velocidade:</label>
-        <select id="speedSelect">
-            <option value="0.25">Muito Lento</option>
-            <option value="0.50">Lento</option>
-            <option value="1" selected>Normal</option>
-            <option value="1.5">Rápido</option>
-            <option value="2">Muito Rápido</option>
-        </select>
-        
-        <button id="startBtn">Sortear</button>
+<div class="container">
+    <h1>Roleta de Sorteio</h1>
+    
+    <input type="file" id="fileInput" accept=".xlsx">
+    <input type="number" id="ticketValue" placeholder="Valor do Ticket">
+    
+    <label for="speedSelect">Velocidade:</label>
+    <select id="speedSelect">
+        <option value="0.25">Muito Lento</option>
+        <option value="0.50">Lento</option>
+        <option value="1" selected>Normal</option>
+        <option value="1.5">Rápido</option>
+        <option value="2">Muito Rápido</option>
+    </select>
+    
+    <button id="startBtn">Sortear</button>
 
-        <div class="roleta-container">
-            <div class="roleta" id="roleta"></div>
-            <div class="barra-vermelha"></div>
-        </div>
+    <div class="roleta-container" style="margin-top: 50px;"> <!-- mais espaçamento -->
+        <div class="roleta" id="roleta"></div>
+        <div class="barra-vermelha"></div>
     </div>
 
-    <!-- Twitch Section -->
-<div class="twitch-section">
+    <!-- Texto central -->
+    <h2 class="streamers-text" style="margin-top: 200px; font-size: 50px;">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2"> Streamers   <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2"></h2> <!-- mais abaixo -->
 
-  <div class="twitch-box">
-    <a href="https://www.twitch.tv/soluxyg" target="_blank" class="twitch-btn">🎮 Seguir SoluxyG</a>
-    <iframe
-      src="https://player.twitch.tv/?channel=soluxyg&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
-      height="150"
-      width="200"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="twitch-box">
-    <a href="https://www.twitch.tv/brenotheodoro" target="_blank" class="twitch-btn">🎮 Seguir BrenoTheodoro</a>
-    <iframe
-      src="https://player.twitch.tv/?channel=brenotheodoro&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
-      height="150"
-      width="200"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- Twitch Players -->
+    <div class="twitch-players" style="margin-top: 150px;">
+        <div class="twitch-box">
+            <iframe 
+                src="https://player.twitch.tv/?channel=brenotheodoro&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+                width="600" height="340" allowfullscreen>
+            </iframe>
+            <p class="player-name">Breno Theodoro</p>
+        </div>
+        <div class="twitch-box" style="margin-top: 20px;">
+            <iframe 
+                src="https://player.twitch.tv/?channel=soluxyg&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+                width="600" height="340" allowfullscreen>
+            </iframe>
+            <p class="player-name">Soluxy</p>
+        </div>
+    </div>
 </div>
 
+    <!-- Botões laterais fixos -->
+    <div class="twitch-section">
+        <a href="https://www.twitch.tv/brenotheodoro" target="_blank" class="twitch-btn">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Theodoro</a>
+        <a href="https://www.twitch.tv/soluxyg" target="_blank" class="twitch-btn">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Soluxy</a>
+    </div>
+
+    <!-- Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <h2>Parabéns!</h2>
@@ -64,8 +68,9 @@
 
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
     <script src="script.js"></script>
+
+    <footer>
+        Desenvolvido por <i>Mairon Teodoro</i>
+    </footer>
 </body>
-<footer>
-    Desenvolvido por Mairon Teodoro
-</footer>
 </html>
