@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sorteio estilo CS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <h2>Sorteio de Tickets</h2>
+
+  <input type="file" id="file" accept=".xlsx,.csv"><br><br>
+
+  <label for="ticketValue">Valor de cada ticket ($):</label>
+  <input type="number" id="ticketValue" value="1" min="1" step="1"><br><br>
+
+  <button id="draw" disabled>Sortear</button>
+
+  <div id="box">
+    <div id="strip" class="strip"></div>
+    <div id="indicator"></div>
+  </div>
+
+  <div id="modal">
+    <div id="modalContent">
+      <h3 id="winnerText"></h3>
+      <br>
+      <button onclick="document.getElementById('modal').style.display='none'">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<footer>
+  <p>Desenvolvido por Mairon Teodoro</p>
+</footer>
+
+</html>
