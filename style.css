@@ -1,153 +1,263 @@
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  color: #fff;
-
-  /* Cor de fundo */
-  background-color: #1a1a1a; /* cor atrás da imagem */
-
-  /* Imagem de fundo */
-  background-image: url('./images/dreno.png');
-  background-size: cover;
-  background-position: calc(50% - 20px) center;
-  background-repeat: no-repeat;
-
-
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3f);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-
-
-h2 {
-  margin-bottom: 20px;
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 5px #000;
 }
 
-input[type="file"], input[type="number"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #555;
-  background: #333;
-  color: #fff;
-  margin: 5px 0;
-  width: 300px;
-  text-align: center;
+.container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+
+input, select, button {
+    margin: 10px 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+/* Botão de escolher arquivo estilizado */
+#fileInput {
+    background: #4a4a6a;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+#fileInput:hover {
+    background: #5c5c80;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+input[type="number"], select {
+    width: 150px;
+    background: #33334d;
+    color: #fff;
 }
 
 button {
-  padding: 10px 25px;
-  border-radius: 5px;
-  border: none;
-  background: #ff6600;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 10px;
+    cursor: pointer;
+    background: #d49217;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover:enabled {
-  background: #ff8800;
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-button:disabled {
-  background: #555;
-  cursor: not-allowed;
+.roleta-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 120px;
+    margin-top: 30px;
+    border-radius: 15px;
+    background: #1b1b2b;
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
 }
 
-#box {
-  margin-top: 30px;
-  width: 90%;
-  max-width: 900px;
-  overflow: hidden;
-  border: 3px solid #fff;
-  border-radius: 8px;
-  position: relative;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
+.roleta {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    transition: transform 6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.strip {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+.card {
+    width: 120px; 
+    height: 90px;
+    margin: 0;
+    background: linear-gradient(145deg, #2a2a3f, #1f1f2f);
+    border: 2px solid #888;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    transform: perspective(600px) rotateY(0deg);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.strip .item {
-  min-width: 120px;
-  max-width: 120px;
-  padding: 15px 5px;
-  margin-right: 0;
-  background: #444;
-  border-radius: 8px;
-  border: 1px solid #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: bold;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card:hover {
+    transform: perspective(600px) rotateY(10deg) scale(1.05);
+    box-shadow: 4px 4px 15px rgba(255,255,255,0.2);
 }
 
-#indicator {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: red;
-  left: 50%;
-  transform: translateX(-50%);
+.barra-vermelha {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #ff4c4c, #ff8c8c);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 10px red, 0 0 20px rgba(255,0,0,0.2);
 }
 
-#modal {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  display: flex;
+/* Modal estilizado */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 10;
 }
 
-#modalContent {
-  background: #333;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  border: 2px solid #ff6600;
-  max-width: 400px;
-  word-wrap: break-word;
+.modal-content {
+    background: linear-gradient(135deg, #5c5c80, #2a2a3f);
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    animation: popIn 0.5s ease-out;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
-#modalContent button {
-  margin-top: 20px;
-  padding: 8px 20px;
-  background: #ff6600;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.modal-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px #000;
 }
 
+.modal-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#closeModal {
+    background: #fff;
+    color: #5c5c80;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#closeModal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #5c5c80;
+}
+
+/* Animação do modal */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Rodapé */
 footer {
-  margin-top: 30px;
-  text-align: center;
-  color: #aaa;
-  font-size: 14px;
-  font-style: italic;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic; 
+}
+.twitch-links {
+  position: fixed;
+  top: 50%;         /* joga pro meio da tela */
+  right: 20px;      /* gruda no canto direito */
+  transform: translateY(-50%); /* centraliza certinho no meio */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1100;    /* fica acima de tudo */
 }
 
+.twitch-links a {
+  background: #9146FF; /* cor oficial da Twitch */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 14px;
+}
+
+.twitch-links a:hover {
+  background: #772ce8;
+  transform: scale(1.05);
+}
+.twitch-player-container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
+  border: 2px solid #9146FF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  background: #000;
+}
+.twitch-section {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1100;
+}
+
+.twitch-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1f1f23;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.twitch-btn {
+  background: #9146FF;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+.twitch-btn:hover {
+  background: #772ce8;
+}

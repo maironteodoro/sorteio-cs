@@ -1,39 +1,71 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Sorteio estilo CS</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta de Sorteio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Roleta de Sorteio</h1>
+        
+        <input type="file" id="fileInput" accept=".xlsx">
+        <input type="number" id="ticketValue" placeholder="Valor do Ticket">
+        
+        <label for="speedSelect">Velocidade:</label>
+        <select id="speedSelect">
+            <option value="0.25">Muito Lento</option>
+            <option value="0.50">Lento</option>
+            <option value="1" selected>Normal</option>
+            <option value="1.5">Rápido</option>
+            <option value="2">Muito Rápido</option>
+        </select>
+        
+        <button id="startBtn">Sortear</button>
 
-  <h2>Sorteio de Tickets</h2>
-
-  <input type="file" id="file" accept=".xlsx,.csv"><br><br>
-
-  <label for="ticketValue">Valor de cada ticket ($):</label>
-  <input type="number" id="ticketValue" value="1" min="1" step="1"><br><br>
-
-  <button id="draw" disabled>Sortear</button>
-
-  <div id="box">
-    <div id="strip" class="strip"></div>
-    <div id="indicator"></div>
-  </div>
-
-  <div id="modal">
-    <div id="modalContent">
-      <h3 id="winnerText"></h3>
-      <br>
-      <button onclick="document.getElementById('modal').style.display='none'">Fechar</button>
+        <div class="roleta-container">
+            <div class="roleta" id="roleta"></div>
+            <div class="barra-vermelha"></div>
+        </div>
     </div>
+
+    <!-- Twitch Section -->
+<div class="twitch-section">
+
+  <div class="twitch-box">
+    <a href="https://www.twitch.tv/soluxyg" target="_blank" class="twitch-btn">🎮 Seguir SoluxyG</a>
+    <iframe
+      src="https://player.twitch.tv/?channel=soluxyg&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+      height="150"
+      width="200"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <script src="script.js"></script>
+  <div class="twitch-box">
+    <a href="https://www.twitch.tv/brenotheodoro" target="_blank" class="twitch-btn">🎮 Seguir BrenoTheodoro</a>
+    <iframe
+      src="https://player.twitch.tv/?channel=brenotheodoro&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+      height="150"
+      width="200"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Parabéns!</h2>
+            <p id="winnerName"></p>
+            <button id="closeModal">Fechar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
 </body>
 <footer>
-  <p>Desenvolvido por Mairon Teodoro</p>
+    Desenvolvido por Mairon Teodoro
 </footer>
-
 </html>
