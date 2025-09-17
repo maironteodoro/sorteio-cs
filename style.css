@@ -288,15 +288,17 @@ footer {
     color: #fff; /* cor neutra */
     text-shadow: 1px 1px 5px #000;
 }
-.twitch-logo {
-    max-width: 25px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 6px;
-}
 .twitch-logoh2 {
-    max-width: 50px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 6px;
+    width: 50px;     /* largura fixa */
+    height: auto; 
+}
+.twitch-btn {
+    display: flex;
+    align-items: center;  /* centraliza verticalmente logo + texto */
+    gap: 6px;             /* espaço entre logo e texto */
+}
+
+.twitch-logo {
+    width: 25px;     /* largura fixa */
+    height: auto;    /* mantém proporção */
 }
