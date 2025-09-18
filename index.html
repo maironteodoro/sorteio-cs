@@ -9,7 +9,9 @@
 <body>
 <div class="container">
     <h1>Roleta de Sorteio</h1>
-    
+    <button onclick="window.location.href='como-funciona.html'">
+        Como funciona a roleta
+    </button><br>
     <input type="file" id="fileInput" accept=".xlsx">
     <input type="number" id="ticketValue" placeholder="Valor do Ticket">
     
@@ -24,26 +26,30 @@
     
     <button id="startBtn">Sortear</button>
 
-    <div class="roleta-container" style="margin-top: 50px;"> <!-- mais espaçamento -->
+    <div class="roleta-container">
         <div class="roleta" id="roleta"></div>
         <div class="barra-vermelha"></div>
     </div>
 
     <!-- Texto central -->
-    <h2 class="streamers-text" style="margin-top: 200px; font-size: 70px;">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2"> Streamers   <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2"></h2> <!-- mais abaixo -->
+    <h2 class="streamers-text">  
+        <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2"> 
+        Streamers   
+        <img src="images/twitch logo.png" alt="Twitch" class="twitch-logoh2">
+    </h2>
 
     <!-- Twitch Players -->
-    <div class="twitch-players" style="margin-top: 150px;">
+    <div class="twitch-players">
         <div class="twitch-box">
             <iframe 
-                src="https://player.twitch.tv/?channel=brenotheodoro&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+                src="https://player.twitch.tv/?channel=brenotheodoro&parent=127.0.0.1&autoplay=true&muted=true"
                 width="600" height="340" allowfullscreen>
             </iframe>
             <p class="player-name">Breno Theodoro</p>
         </div>
-        <div class="twitch-box" style="margin-top: 20px;">
+        <div class="twitch-box">
             <iframe 
-                src="https://player.twitch.tv/?channel=soluxyg&parent=https://maironteodoro.github.io/sorteio-cs&autoplay=true&muted=true"
+                src="https://player.twitch.tv/?channel=soluxyg&parent=127.0.0.1&autoplay=true&muted=true"
                 width="600" height="340" allowfullscreen>
             </iframe>
             <p class="player-name">Soluxy</p>
@@ -51,26 +57,36 @@
     </div>
 </div>
 
-    <!-- Botões laterais fixos -->
-    <div class="twitch-section">
-        <a href="https://www.twitch.tv/brenotheodoro" target="_blank" class="twitch-btn">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Theodoro</a>
-        <a href="https://www.twitch.tv/soluxyg" target="_blank" class="twitch-btn">  <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Soluxy</a>
+<!-- Botões laterais -->
+<div class="twitch-section">
+    <a href="https://www.twitch.tv/brenotheodoro" target="_blank" class="twitch-btn">  
+        <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Theodoro
+    </a>
+    <a href="https://www.twitch.tv/soluxyg" target="_blank" class="twitch-btn">  
+        <img src="images/twitch logo.png" alt="Twitch" class="twitch-logo"> Seguir Soluxy
+    </a>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>Parabéns!</h2>
+        <p id="winnerName"></p>
+        <button id="closeModal">Fechar</button>
     </div>
+</div>
 
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <h2>Parabéns!</h2>
-            <p id="winnerName"></p>
-            <button id="closeModal">Fechar</button>
-        </div>
-    </div>
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+<script src="script.js"></script>
+      <div class="pix-container">
+    <p>Se quiser apoiar o projeto, pode escanear o QR Code abaixo. Isso é apenas um apoio voluntário 😊</p>
+    <img src="images/qr-code.png" alt="QR Code Pix" class="pix-qr-img">
+  </div>
+  <br>
+<footer>
+   
 
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
-
-    <footer>
-        Desenvolvido por <i>Mairon Teodoro</i>
-    </footer>
+     &copy; 2025 Roleta - Desenvolvido por Mairon Teodoro
+</footer>
 </body>
 </html>

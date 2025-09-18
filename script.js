@@ -23,7 +23,7 @@ function handleFile(event) {
         for (let i = 1; i < json.length; i++) { // ignorando cabeçalho
             const row = json[i];
             const valor = Number(row[1]);
-            const nome = row[row.length - 1];
+            const nome = row[2];
             if (!isNaN(valor) && nome) participants.push({ nome, valor });
         }
 
@@ -140,7 +140,7 @@ function generateRoleta(winner) {
 
         // Som de confetti
         const confettiSound = new Audio('sounds/confetti.mp3');
-        confettiSound.volume = 0.4;
+        confettiSound.volume = 0.1;
         confettiSound.play();
 
         // Mostrar modal

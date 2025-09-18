@@ -302,3 +302,56 @@ footer {
     width: 25px;     /* largura fixa */
     height: auto;    /* mantém proporção */
 }
+.pix-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Ícone pequeno do Pix */
+.pix-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pix-icon:hover {
+    transform: scale(1.2);
+}
+
+/* QR code escondido por padrão */
+.pix-qr {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    padding: 5px;
+    background: #1b1b2b;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* Container do Pix */
+.pix-container {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* QR code sempre visível */
+.pix-qr-img {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
