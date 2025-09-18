@@ -349,8 +349,8 @@ footer {
 
 /* QR code sempre visível */
 .pix-qr-img {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     margin-top: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
