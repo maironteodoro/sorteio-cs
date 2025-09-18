@@ -347,10 +347,11 @@ footer {
     font-style: italic;
 }
 
-/* QR code sempre visível */
+/* QR code responsivo e discreto */
 .pix-qr-img {
-    width: 60px;
-    height: 60px;
+    width: 20vw;      /* ocupa 20% da largura da tela */
+    max-width: 120px; /* nunca passa de 120px */
+    height: auto;     /* mantém proporção */
     margin-top: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
