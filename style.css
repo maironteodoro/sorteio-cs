@@ -355,8 +355,8 @@ footer {
 }
 
 .support-qr img {
-    width: 70%;
-    height: 150px;
+    width: 150px;
+    height: auto;
     border-radius: 5px;
     margin-bottom: 4px;
 }
