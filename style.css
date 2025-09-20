@@ -342,7 +342,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 120px;          /* tamanho pequeno e discreto */
+    width: 50px;          /* tamanho pequeno e discreto */
     text-align: center;
     font-size: 12px;
     color: #fff;
